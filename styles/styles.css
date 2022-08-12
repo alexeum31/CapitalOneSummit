@@ -8,7 +8,21 @@ body{
 }
 
 .youtube-logo {
-width: 200px;
-height: 120px;
+text-align: center;
 }
 
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 70px
+}
+
+input {
+    height: 20 px;
+}
+
+button {
+    min-width: 120px;
+}
