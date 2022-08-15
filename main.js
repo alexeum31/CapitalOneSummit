@@ -1,21 +1,28 @@
-let container = document.querySelector(".container")
-
+const searchFrom= document.querySelector('.search')
 const subtitles=document.querySelector(".subtitles");
+const input = document.querySelector('.input');
+
+searchFrom.addEventListener('submit', retrieve);
+
+//button creation
+function retrieve(e){
+
+  e.preventDefault();
+  let videoURL = input.value;
+  const videoID = videoURL.split("v=");
+}
+//api URL creation
 
 const apiData= { 
     url: "https://subtitles-for-youtube.p.rapidapi.com",
-    slash: "/subtitles",
-    id: "/%7BvideoId%7",
-    apiK : "f2b0ea9532msh4a7c440a376bc0cp1ef3e0jsne053e437c41f",
+    slash: "/",
+    id: document.querySelector(videoID)
 };
 
-const {url, slash, id, apiK} = apiData;
-//const apiURL= `${URL}${slash}${id}${apiK}`;
-const apiURL= `https://subtitles-for-youtube.p.rapidapi.com/subtitles/5T3GY8PSiSI`;
+const {url, slash, id} = apiData;
+const apiURL= `${URL}${slash}${id}`;
 
 //activate API call
-//console.log(apiURL)
-
 
 const options = {
 	method: 'GET',
@@ -25,27 +32,27 @@ const options = {
 	}
 };
 
-fetch('https://subtitles-for-youtube.p.rapidapi.com/subtitles/5T3GY8PSiSI', options)
+fetch(apiURL, options)
 .then(response => response.json())
-	// .then(response => console.log("this is repsonse", response)  
   .then(response => 
   {response.forEach(
-    (subtext) => { console.log("this is subtext", subtext, "this is subtext data", subtext.text)
-      let D = document.createElement("li");
-      let a = document.createElement("p");
-      // a.setAttribute("href", act_name.url);
-      a.setAttribute("target", "_blank");
-      // a.setAttribute("rel", "noopener noreferrer");
-      // a.setAttribute("style", "padding-top: 5px;")
-      a.textContent = subtext.text;
-      D.className = "subtitles";
-      D.appendChild(a);
-      subtitles.appendChild(D);
+    (subtext.text) => {
+      let D = document.createElement("p"),
+      let a = document.createElement("p"),
+      a.textContent = subtext.text,
+      D.className = "subtitles",
+      D.appendChild(a),
+      subtitles.appendChild(D),
+      
+    })})
 
 
 
+  
 
-
-          })})
-	
-       
+//rong will send vid on similar api that uses a sesarch bar. 
+//see how the js is able to aquire the text that is within the search bar. 
+//then, use js to split the url. get the last part. 
+//set it to a variable, have that variable connect to the constant. 
+//in my fetch it will take in parts of the url and the id. 
+//function called on a search, difference is take the string to get the last part and set that as the constant.

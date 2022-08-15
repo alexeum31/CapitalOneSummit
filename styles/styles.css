@@ -1,3 +1,9 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
 body{
     background-color: rgb(255, 255, 255);
 }
@@ -11,13 +17,7 @@ body{
 text-align: center;
 }
 
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    height: 70px
-}
+
 
 input {
     height: 20 px;
@@ -25,4 +25,12 @@ input {
 
 button {
     min-width: 120px;
+}
+
+.subtitles {
+    text-align: center;
+}
+
+.search{
+    text-align: center;
 }
