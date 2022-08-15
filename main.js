@@ -4,7 +4,7 @@ const input = document.querySelector('.input');
 
 searchFrom.addEventListener('submit', retrieve);
 
-//button creation
+//button and function creation
 function retrieve(e){
 
   e.preventDefault();
@@ -13,16 +13,6 @@ function retrieve(e){
   console.log ("videoID", videoID)
   callAPI(videoID)
 }
-//api URL creation
-
-// const apiData= { 
-    // url: "https://subtitles-for-youtube.p.rapidapi.com",
-//     slash: "/",
-//     id: videoID
-// };
-
-// const {url, slash, id} = apiData;
-// const apiURL= `${URL}${slash}${id}`;
 
 //activate API call
 function callAPI(videoID) {
@@ -54,13 +44,3 @@ function callAPI(videoID) {
 
   
 
-//rong will send vid on similar api that uses a sesarch bar. 
-//see how the js is able to aquire the text that is within the search bar. 
-//then, use js to split the url. get the last part. 
-//set it to a variable, have that variable connect to the constant. 
-//in my fetch it will take in parts of the url and the id. 
-//function called on a search, difference is take the string to get the last part and set that as the constant.
-
-//right now, fetch isnt a function. its just being ran as soon as the file loaded which is everytime i refresh
-//i want it to be called after the input value. wrap fetch in the function and call the function
-//write a function and put the fetch stuff in there
