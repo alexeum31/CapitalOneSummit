@@ -21,10 +21,15 @@ text-align: center;
     font-weight: bold;
     font-size: medium;
     font-family: 'Roboto', sans-serif;
+    text-align: center;
+
 }
 .text2{
     font-size: medium;
     font-family: 'Roboto', sans-serif;
+    text-align: center;
+    line-height:900px;
+
 }
 
 input {
@@ -36,7 +41,9 @@ button {
 }
 
 .subtitles {
-    text-align: center;
+    position: absolute;
+left: 50%;
+transform: translateX(-50%)
 }
 
 .search{
